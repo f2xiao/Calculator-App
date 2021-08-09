@@ -1,26 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no initial-scale=1.0"
+    />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Calculator app</title>
 
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main id="calculator">
+      <div class="box">
+        calc
+        <div class="theme">
+          <span>THEME</span>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+      <div id="display"></div>
+      <div id="container">
+        <button class="operand">7</button>
+        <button class="operand">8</button>
+        <button class="operand">9</button>
+        <button class="clear">AC</button>
+        <button class="operand">4</button>
+        <button class="operand">5</button>
+        <button class="operand">6</button>
+        <button value="add" class="operator">+</button>
+        <button class="operand">1</button>
+        <button class="operand">2</button>
+        <button class="operand">3</button>
+        <button value="subtract" class="operator">-</button>
+        <button class="operand">.</button>
+        <button class="operand">0</button>
+        <button value="divide" class="operator">/</button>
+        <button value="multiply" class="operator">x</button>
+        <button class="percentage">%</button>
+        <button class="sign">+/-</button>
+        <button id="equal">=</button>
+      </div>
+    </main>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">f2xiao</a>.
+    </div>
+  </body>
+  <script src="./js/index.js"></script>
 </html>
