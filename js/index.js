@@ -42,9 +42,9 @@ const calculator = document.querySelector("#calculator");
 const display = calculator.querySelector("#display");
 const operands = calculator.querySelectorAll(".operand");
 const operators = calculator.querySelectorAll(".operator");
-const equal = calculator.querySelector("#equal");
+const equal = calculator.querySelector(".Enter");
 const decimal = calculator.querySelector(".decimal");
-const del = calculator.querySelector(".backspace");
+const del = calculator.querySelector(".Backspace");
 const sign = calculator.querySelector(".sign");
 
 let digits = "";
@@ -161,5 +161,20 @@ sign.addEventListener("click", function () {
   } else if (result && display.textContent == result) {
     result = -result;
     updateDisplay(result);
+  }
+});
+
+// keyboard support
+const btns = calculator.querySelectorAll("button");
+let key;
+document.addEventListener("keydown", function (event) {
+  console.log(event.key);
+  let yes = Array.from(btns).some(function (btn, index) {
+    key = index;
+    return btn.textContent == event.key || btn.className == event.key;
+  });
+  if (yes) {
+    console.log(yes);
+    Array.from(btns)[key].click();
   }
 });

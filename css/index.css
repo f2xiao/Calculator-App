@@ -109,14 +109,14 @@ button {
 }
 
 /* functional keys */
-#container #equal {
+#container .Enter {
   grid-column: 3 / 5;
   background: hsl(6, 63%, 50%); /* key background, toggle */
   color: #fff;
   box-shadow: 0 2px hsl(6, 70%, 34%); /* key shadow */
 }
 #container .reset,
-#container .backspace,
+#container .Backspace,
 #container .sign {
   color: #fff;
   background: hsl(225, 21%, 49%); /* key background */
