@@ -115,8 +115,8 @@ button {
   color: #fff;
   box-shadow: 0 2px hsl(6, 70%, 34%); /* key shadow */
 }
-#container .clear,
-#container .percentage,
+#container .reset,
+#container .backspace,
 #container .sign {
   color: #fff;
   background: hsl(225, 21%, 49%); /* key background */

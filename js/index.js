@@ -19,10 +19,10 @@ function evaluate(operator, num1, num2) {
   }
 }
 const add = function (num1, num2) {
-  return num1 + num2;
+  return (num1 * 10 + num2 * 10) / 10;
 };
 const subtract = function (num1, num2) {
-  return num1 - num2;
+  return (num1 * 10 - num2 * 10) / 10;
 };
 const multiply = function (num1, num2) {
   return num1 * num2;
@@ -34,6 +34,7 @@ const divide = function (num1, num2) {
     return num1 / num2;
   }
 };
+
 const operate = function (operator, num1, num2) {
   return operator(num1, num2);
 };
@@ -42,13 +43,25 @@ const display = calculator.querySelector("#display");
 const operands = calculator.querySelectorAll(".operand");
 const operators = calculator.querySelectorAll(".operator");
 const equal = calculator.querySelector("#equal");
+const decimal = calculator.querySelector(".decimal");
+const del = calculator.querySelector(".backspace");
+const sign = calculator.querySelector(".sign");
 
 let digits = "";
 let num1, num2, operator, result;
-console.log(digits, num1, num2, operator, result);
+// console.log(digits, num1, num2, operator, result);
+
+let flag = false;
 // function to update the display
 const updateDisplay = (displayValue) => {
   display.textContent = displayValue;
+  // check if the display has one decimal point if yes disablle it
+  flag = display.textContent.includes(".");
+  if (flag) {
+    decimal.disabled = true;
+  } else {
+    decimal.disabled = false;
+  }
 };
 Array.from(operands).forEach(function (value, index) {
   value.addEventListener("click", function (e) {
@@ -56,14 +69,14 @@ Array.from(operands).forEach(function (value, index) {
       result = "";
     }
     digits += e.target.textContent;
-    updateDisplay(digits);
+    updateDisplay(Number(digits));
   });
 });
 
 Array.from(operators).forEach(function (value, index) {
   value.addEventListener("click", function (e) {
     e.stopPropagation();
-    console.log(e.target.value);
+    // console.log(e.target.value);
     console.log(digits, num1, num2, operator, result);
     if (!operator && !result) {
       num1 = Number(digits);
@@ -96,17 +109,17 @@ Array.from(operators).forEach(function (value, index) {
 });
 
 equal.addEventListener("click", function (e) {
-  console.log(digits, num1, num2, operator, result);
+  // console.log(digits, num1, num2, operator, result);
   if (!num2 && operator && !result) {
     num2 = Number(digits);
-    console.log(digits, num1, num2, operator, result);
+    // console.log(digits, num1, num2, operator, result);
     result = evaluate(operator, num1, num2);
     console.log(result);
     updateDisplay(result);
   } else if (result && operator) {
     num1 = result;
     num2 = Number(digits);
-    console.log(digits, num1, num2, operator, result);
+    // console.log(digits, num1, num2, operator, result);
     result = evaluate(operator, num1, num2);
     updateDisplay(result);
   }
@@ -115,4 +128,38 @@ equal.addEventListener("click", function (e) {
   num1 = null;
   num2 = null;
   console.log(digits, num1, num2, operator, result);
+});
+
+// reset feature: reset everything if AC is pressed
+const reset = calculator.querySelector(".reset");
+reset.addEventListener("click", function () {
+  digits = "";
+  updateDisplay(digits);
+  operator = null;
+  num1 = null;
+  num2 = null;
+  result = null;
+});
+
+// backspace button: undo the wrong input number
+del.addEventListener("click", function () {
+  if (digits && digits.length > 1) {
+    digits = digits.slice(0, -1);
+    updateDisplay(digits);
+  } else if (digits.length == 1) {
+    updateDisplay("0");
+    digits = "";
+  }
+});
+
+// negate sign
+sign.addEventListener("click", function () {
+  if (digits && !result) {
+    digits = -digits;
+    console.log(digits);
+    updateDisplay(digits);
+  } else if (result && display.textContent == result) {
+    result = -result;
+    updateDisplay(result);
+  }
 });
