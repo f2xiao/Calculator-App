@@ -10,7 +10,8 @@ html {
 }
 
 body {
-  background: hsl(222, 26%, 31%); /* main background */
+  /* background: hsl(222, 26%, 31%);  */
+  /* main background */
 }
 ul li {
   list-style: none;
@@ -26,10 +27,10 @@ button {
   height: 710px;
 }
 /* theme-toggle */
-.box {
+.theme-box {
   height: 45px;
   margin-bottom: 30px;
-  color: #fff;
+  /* color: #fff; */
 }
 .theme {
   position: relative;
@@ -37,10 +38,10 @@ button {
   width: 70px;
   height: 25px;
   border-radius: 12.5px;
-  background: hsl(223, 31%, 20%); /* toggle background */
+  /* background: hsl(223, 31%, 20%);  */
+  /* toggle background */
 }
-.theme::before {
-  content: "";
+.theme .dot {
   position: absolute;
   top: 50%;
   left: 6px;
@@ -53,25 +54,30 @@ button {
   z-index: 1;
 }
 .theme ul {
+  display: flex;
   position: absolute;
   left: 0;
   top: -25px;
-  color: #fff;
+  /* color: #fff; */
   font-size: 11px;
 }
 .theme ul li {
-  float: left;
   height: 25px;
   width: 23px;
   text-align: center;
   line-height: 25px;
+}
+.theme ul li:hover {
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 .theme span {
   position: absolute;
   left: -70px;
   bottom: 6px;
   font-size: 11px;
-  color: #fff;
+  /* color: #fff; */
 }
 
 /* screen */
@@ -80,9 +86,10 @@ button {
   padding: 35px 35px 49px;
   margin-bottom: 25px;
   text-align: end;
-  background: hsl(224, 36%, 15%); /* screen background */
+  /* background: hsl(224, 36%, 15%);  */
+  /* screen background */
   border-radius: 6px;
-  color: #fff;
+  /* color: #fff; */
 }
 
 /* keypad */
@@ -94,31 +101,39 @@ button {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 20px;
-  background: hsl(223, 31%, 20%); /* keypad background */
+  /* background: hsl(223, 31%, 20%);  */
+  /* keypad background */
   border-radius: 6px;
 }
 
 /* keys */
 #container > button {
-  background: hsl(30, 25%, 89%); /* key background */
+  /* background: hsl(30, 25%, 89%);  */
+  /* key background */
   border-radius: 5px;
   font-family: "Spartan";
   font-size: 32px;
-  color: hsl(221, 14%, 31%); /* Text */
-  box-shadow: 0 2px hsl(28, 16%, 65%); /* key shadow */
+  /* color: hsl(221, 14%, 31%);  */
+  /* Text */
+  /* box-shadow: 0 2px hsl(28, 16%, 65%);  */
+  /* key shadow */
 }
 
 /* functional keys */
 #container .Enter {
   grid-column: 3 / 5;
-  background: hsl(6, 63%, 50%); /* key background, toggle */
-  color: #fff;
-  box-shadow: 0 2px hsl(6, 70%, 34%); /* key shadow */
+  /* background: hsl(6, 63%, 50%);  */
+  /* key background, toggle */
+  /* color: #fff; */
+  /* box-shadow: 0 2px hsl(6, 70%, 34%);  */
+  /* key shadow */
 }
 #container .reset,
 #container .Backspace,
 #container .sign {
-  color: #fff;
-  background: hsl(225, 21%, 49%); /* key background */
-  box-shadow: 0 2px hsl(224, 28%, 35%); /* key shadow */
+  /* color: #fff; */
+  /* background: hsl(225, 21%, 49%);  */
+  /* key background */
+  /* box-shadow: 0 2px hsl(224, 28%, 35%);  */
+  /* key shadow */
 }
