@@ -38,13 +38,13 @@ const divide = function (num1, num2) {
 const operate = function (operator, num1, num2) {
   return operator(num1, num2);
 };
-const calculator = document.querySelector("#calculator");
-const display = calculator.querySelector("#display");
+const calculator = document.querySelector(".calculator");
+const display = calculator.querySelector(".display");
 const operands = calculator.querySelectorAll(".operand");
 const operators = calculator.querySelectorAll(".operator");
-const equal = calculator.querySelector(".Enter");
+const Enter = calculator.querySelector(".Enter");
 const decimal = calculator.querySelector(".decimal");
-const del = calculator.querySelector(".Backspace");
+const Backspace = calculator.querySelector(".Backspace");
 const sign = calculator.querySelector(".sign");
 
 let digits = "";
@@ -67,7 +67,11 @@ Array.from(operands).forEach(function (value, index) {
       result = "";
     }
     digits += e.target.textContent;
-    updateDisplay(Number(digits));
+    if (digits.endsWith(".") && digits.length == 2) {
+      updateDisplay(digits);
+    } else {
+      updateDisplay(Number(digits));
+    }
   });
 });
 
@@ -106,7 +110,7 @@ Array.from(operators).forEach(function (value, index) {
   });
 });
 
-equal.addEventListener("click", function (e) {
+Enter.addEventListener("click", function (e) {
   // console.log(digits, num1, num2, operator, result);
   if (!num2 && operator && !result) {
     num2 = Number(digits);
@@ -140,7 +144,7 @@ reset.addEventListener("click", function () {
 });
 
 // backspace button: undo the wrong input number
-del.addEventListener("click", function () {
+Backspace.addEventListener("click", function () {
   if (digits && digits.length > 1) {
     digits = digits.slice(0, -1);
     updateDisplay(digits);
@@ -184,13 +188,13 @@ window.addEventListener("load", function () {
 });
 
 const body = document.body;
-const themeBox = document.querySelector(".theme-box");
+const themeBox = document.querySelector(".themeBox");
 const theme = document.querySelector(".theme");
-const container = document.querySelector("#container");
+const container = document.querySelector(".container");
 const lis = calculator.querySelectorAll(".theme ul li");
-const themeDot = calculator.querySelector(".theme .dot");
+const toggle = calculator.querySelector(".theme .toggle");
 const links = document.querySelectorAll(".attribution a");
-const startX = themeDot.offsetLeft;
+const startX = toggle.offsetLeft;
 
 function setFunBtnsTheme(ele1, ele2, ele3, n) {
   let eles = [ele1, ele2, ele3];
@@ -204,14 +208,14 @@ function setTheme(n) {
   calculator.classList.add(`font-theme-${n}`);
   theme.classList.add(`theme-theme-${n}`);
   themeBox.classList.add(`themeBox-theme-${n}`);
-  themeDot.classList.add(`themeDot-theme-${n}`);
+  toggle.classList.add(`toggle-theme-${n}`);
   display.classList.add(`display-theme-${n}`);
   container.classList.add(`container-theme-${n}`);
   Array.from(btns).forEach(function (btn, index) {
     btn.classList.add(`btns-theme-${n}`);
   });
-  equal.classList.add(`equal-theme-${n}`);
-  setFunBtnsTheme(del, reset, sign, n);
+  Enter.classList.add(`Enter-theme-${n}`);
+  setFunBtnsTheme(Backspace, reset, sign, n);
   Array.from(links).forEach(function (link) {
     link.classList.add(`link-theme-${n}`);
   });
@@ -228,14 +232,14 @@ function removeTheme(n) {
   calculator.classList.remove(`font-theme-${n}`);
   theme.classList.remove(`theme-theme-${n}`);
   themeBox.classList.remove(`themeBox-theme-${n}`);
-  themeDot.classList.remove(`themeDot-theme-${n}`);
+  toggle.classList.remove(`toggle-theme-${n}`);
   display.classList.remove(`display-theme-${n}`);
   container.classList.remove(`container-theme-${n}`);
   Array.from(btns).forEach(function (btn, index) {
     btn.classList.remove(`btns-theme-${n}`);
   });
-  equal.classList.remove(`equal-theme-${n}`);
-  removeFunBtnsTheme(del, reset, sign, n);
+  Enter.classList.remove(`Enter-theme-${n}`);
+  removeFunBtnsTheme(Backspace, reset, sign, n);
   Array.from(links).forEach(function (link) {
     link.classList.remove(`link-theme-${n}`);
   });
@@ -251,10 +255,9 @@ Array.from(lis).forEach(function (li, index) {
 
     this.classList.toggle("disable");
     console.log(index);
-    themeDot.style.left = `${this.offsetLeft + startX}px`;
+    toggle.style.left = `${this.offsetLeft + startX}px`;
     removeTheme(current + 1);
     setTheme(index + 1);
     current = index;
   });
 });
-add;
