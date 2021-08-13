@@ -19,11 +19,17 @@ The designs were created to the following widths:
 
 #### Keys
 
+<!-- funBtns -->
+
 - Desaturated dark blue (key background): hsl(225, 21%, 49%)
 - Desaturated dark blue (key shadow): hsl(224, 28%, 35%)
 
+- <!-- equal key -->
+
 - Red (key background, toggle): hsl(6, 63%, 50%)
 - Dark red (key shadow): hsl(6, 70%, 34%)
+-
+- <!-- num key -->
 
 - Light grayish orange (key background): hsl(30, 25%, 89%)
 - Grayish orange (key shadow): hsl(28, 16%, 65%)

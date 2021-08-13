@@ -9,12 +9,13 @@ html {
   font-family: "Spartan", sans-serif;
 }
 
-body {
-  /* background: hsl(222, 26%, 31%);  */
-  /* main background */
-}
 ul li {
   list-style: none;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+  /* color: white; */
 }
 button {
   appearance: none;
@@ -26,11 +27,11 @@ button {
   width: 540px;
   height: 710px;
 }
+
 /* theme-toggle */
 .theme-box {
   height: 45px;
   margin-bottom: 30px;
-  /* color: #fff; */
 }
 .theme {
   position: relative;
@@ -38,8 +39,6 @@ button {
   width: 70px;
   height: 25px;
   border-radius: 12.5px;
-  /* background: hsl(223, 31%, 20%);  */
-  /* toggle background */
 }
 .theme .dot {
   position: absolute;
@@ -50,7 +49,6 @@ button {
   height: 15px;
   width: 15px;
   border-radius: 7.5px;
-  background: #d73b35;
   z-index: 1;
 }
 .theme ul {
@@ -58,7 +56,6 @@ button {
   position: absolute;
   left: 0;
   top: -25px;
-  /* color: #fff; */
   font-size: 11px;
 }
 .theme ul li {
@@ -77,7 +74,6 @@ button {
   left: -70px;
   bottom: 6px;
   font-size: 11px;
-  /* color: #fff; */
 }
 
 /* screen */
@@ -86,10 +82,7 @@ button {
   padding: 35px 35px 49px;
   margin-bottom: 25px;
   text-align: end;
-  /* background: hsl(224, 36%, 15%);  */
-  /* screen background */
   border-radius: 6px;
-  /* color: #fff; */
 }
 
 /* keypad */
@@ -101,39 +94,185 @@ button {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 20px;
-  /* background: hsl(223, 31%, 20%);  */
-  /* keypad background */
   border-radius: 6px;
 }
 
 /* keys */
 #container > button {
-  /* background: hsl(30, 25%, 89%);  */
-  /* key background */
   border-radius: 5px;
   font-family: "Spartan";
   font-size: 32px;
-  /* color: hsl(221, 14%, 31%);  */
-  /* Text */
-  /* box-shadow: 0 2px hsl(28, 16%, 65%);  */
-  /* key shadow */
 }
 
 /* functional keys */
 #container .Enter {
   grid-column: 3 / 5;
-  /* background: hsl(6, 63%, 50%);  */
-  /* key background, toggle */
-  /* color: #fff; */
-  /* box-shadow: 0 2px hsl(6, 70%, 34%);  */
-  /* key shadow */
 }
-#container .reset,
-#container .Backspace,
-#container .sign {
-  /* color: #fff; */
-  /* background: hsl(225, 21%, 49%);  */
-  /* key background */
-  /* box-shadow: 0 2px hsl(224, 28%, 35%);  */
-  /* key shadow */
+
+/* Theme 1 */
+
+/* Backgrounds */
+.body-theme-1 {
+  background: hsl(222, 26%, 31%);
+}
+
+/* toggle slider */
+.theme-theme-1 {
+  background: hsl(223, 31%, 20%);
+}
+
+/* toggle */
+.themeDot-theme-1 {
+  background: hsl(6, 63%, 50%);
+}
+
+/* display */
+.display-theme-1 {
+  background: hsl(224, 36%, 15%);
+  color: #fff;
+}
+
+/* keypad */
+.container-theme-1 {
+  background: hsl(223, 31%, 20%);
+}
+/* Keys */
+
+/* num keys */
+.btns-theme-1 {
+  background: hsl(30, 25%, 89%);
+  box-shadow: 0 2px hsl(28, 16%, 65%);
+  color: hsl(221, 14%, 31%);
+}
+/* equal key */
+.equal-theme-1 {
+  background: hsl(6, 63%, 50%);
+  box-shadow: 0 2px hsl(6, 70%, 34%);
+  color: #fff;
+}
+/* other function keys*/
+.funBtns-theme-1 {
+  background: hsl(225, 21%, 49%);
+  box-shadow: 0 2px hsl(224, 28%, 35%);
+}
+
+.font-theme-1,
+.link-theme-1 {
+  color: #fff;
+}
+/* Theme 2 */
+
+/* Backgrounds */
+.body-theme-2 {
+  background: hsl(0, 0%, 90%);
+}
+
+/* toggle slider */
+.theme-theme-2 {
+  background: hsl(0, 5%, 81%);
+}
+.themeBox-theme-2 {
+  color: hsl(60, 10%, 19%);
+}
+
+/* toggle */
+.themeDot-theme-2 {
+  background: hsl(6, 63%, 50%);
+}
+
+/* display */
+.display-theme-2 {
+  background: hsl(0, 0%, 93%);
+  color: hsl(60, 10%, 19%);
+}
+
+/* keypad */
+.container-theme-2 {
+  background: hsl(0, 5%, 81%);
+}
+/* Keys */
+
+/* num keys */
+.btns-theme-2 {
+  background: hsl(45, 7%, 89%);
+  box-shadow: 0 2px hsl(35, 11%, 61%);
+  color: hsl(60, 10%, 19%);
+}
+/* equal key */
+.equal-theme-2 {
+  background: hsl(25, 98%, 40%);
+  box-shadow: 0 2px hsl(25, 99%, 27%);
+  color: #fff;
+}
+/* other function keys*/
+.funBtns-theme-2 {
+  background: hsl(185, 42%, 37%);
+  box-shadow: 0 2px hsl(185, 58%, 25%);
+}
+.link-theme-2 {
+  color: hsl(60, 10%, 19%);
+}
+.font-theme-2,
+.link-theme-2 {
+  color: #fff;
+}
+
+/* Theme 3 */
+
+/* Backgrounds */
+.body-theme-3 {
+  background: hsl(268, 75%, 9%);
+  color: hsl(281, 89%, 26%);
+}
+
+/* toggle slider */
+.theme-theme-3 {
+  background: hsl(268, 71%, 12%);
+}
+.themeBox-theme-3,
+.link-theme-3 {
+  color: hsl(52, 100%, 62%);
+}
+
+/* toggle */
+.themeDot-theme-3 {
+  background: hsl(176, 100%, 44%);
+}
+
+/* display */
+.display-theme-3 {
+  background: hsl(268, 71%, 12%);
+  color: hsl(52, 100%, 62%);
+}
+
+/* keypad */
+.container-theme-3 {
+  background: hsl(268, 71%, 12%);
+}
+/* Keys */
+
+/* num keys */
+.btns-theme-3 {
+  background: hsl(268, 47%, 21%);
+  box-shadow: 0 2px hsl(290, 70%, 36%);
+  color: hsl(52, 100%, 62%);
+}
+/* equal key */
+.equal-theme-3 {
+  background: hsl(176, 100%, 44%);
+  box-shadow: 0 2px hsl(177, 92%, 70%);
+  color: hsl(198, 20%, 13%);
+}
+/* other function keys*/
+.funBtns-theme-3 {
+  background: hsl(281, 89%, 26%);
+  box-shadow: 0 2px hsl(285, 91%, 52%);
+}
+
+.font-theme-3 {
+  color: #fff;
+}
+
+.disable {
+  pointer-events: none;
 }

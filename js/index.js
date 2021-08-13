@@ -176,124 +176,85 @@ document.addEventListener("keydown", function (event) {
     Array.from(btns)[key].click();
   }
 });
+
+// theme switch feature set default to theme 1;
+
+window.addEventListener("load", function () {
+  setTheme(1);
+});
+
 const body = document.body;
-const color = [
-  {
-    bodyBg: "hsl(222, 26%, 31%)",
-    bodyText: "hsl(0, 0, 100%)",
-    themeBg: "hsl(223, 31%, 20%)",
-    displayBg: "hsl(224, 36%, 15%)",
-    btnsBg: "hsl(30, 25%, 89%)",
-    btnsSd: "hsl(28, 16%, 65%)",
-    btnsText: "hsl(221, 14%, 31%)",
-    funBtnsBg: "hsl(225, 21%, 49%)",
-    funBtnsSd: "hsl(224, 28%, 35%)",
-    funBtnsText: "hsl(0, 0, 100%)",
-    equalBg: "hsl(6, 63%, 50%)",
-    equalSd: "hsl(6, 70%, 34%)",
-  },
-  {
-    bodyBg: "hsl(0, 0%, 90%)",
-    bodyText: "hsl(60, 10%, 19%)",
-    themeBg: " hsl(0, 5%, 81%)",
-    displayBg: "hsl(0, 0%, 93%)",
-    btnsBg: "hsl(45, 7%, 89%)",
-    btnsSd: "hsl(35, 11%, 61%)",
-    btnsText: "hsl(60, 10%, 19%)",
-    funBtnsBg: "hsl(185, 42%, 37%)",
-    funBtnsSd: "hsl(185, 58%, 25%)",
-    funBtnsText: "hsl(0, 0, 100%)",
-    equalBg: "hsl(25, 98%, 40%)",
-    equalSd: "hsl(25, 99%, 27%)",
-  },
-  {
-    bodyBg: "hsl(268, 75%, 9%)",
-    themeBg: "hsl(268, 71%, 12%) ",
-    displayBg: "hsl(268, 71%, 12%)",
-    btnsBg: "hsl(281, 89%, 26%)",
-    btnsSd: "hsl(285, 91%, 52%)",
-    btnsText: "hsl(52, 100%, 62%)",
-    funBtnsBg: "hsl(268, 47%, 21%)",
-    funBtnsSd: "hsl(290, 70%, 36%)",
-    funBtnsText: "hsl(0, 0, 100%)",
-    equalBg: "hsl(176, 100%, 44%)",
-    equalSd: "hsl(177, 92%, 70%)",
-    equalText: "hsl(198, 20%, 13%)",
-  },
-];
-// theme data
 const themeBox = document.querySelector(".theme-box");
 const theme = document.querySelector(".theme");
 const container = document.querySelector("#container");
-function setBgColor(element, bgColor) {
-  element.style.backgroundColor = bgColor;
-}
-function setKeyColor(element, color1, color2, textColor) {
-  setBgColor(element, color1);
-  element.style.boxShadow = `0 2px ${color2}`;
-  element.style.color = textColor;
-}
-function setTheme(n) {
-  // 0 for theme 1, 1 for theme 2
-  setBgColor(body, color[n].bodyBg);
-  body.style.color = color[n].bodyText;
-  // theme.style.color = color[n].bodyText;
-  setBgColor(theme, color[n].themeBg);
-  setBgColor(container, color[n].themeBg);
-  setBgColor(display, color[n].themeBg);
-  Array.from(operands).forEach(function (operand) {
-    setKeyColor(operand, color[n].btnsBg, color[n].btnsSd, color[n].btnsText);
-  });
-  Array.from(operators).forEach(function (operator) {
-    setKeyColor(operator, color[n].btnsBg, color[n].btnsSd, color[n].btnsText);
-  });
-  setKeyColor(
-    del,
-    color[n].funBtnsBg,
-    color[n].funBtnsSd,
-    color[n].funBtnsText
-  );
-  setKeyColor(
-    reset,
-    color[n].funBtnsBg,
-    color[n].funBtnsSd,
-    color[n].funBtnsText
-  );
-  setKeyColor(
-    sign,
-    color[n].funBtnsBg,
-    color[n].funBtnsSd,
-    color[n].funBtnsText
-  );
-  setKeyColor(equal, color[n].equalBg, color[n].equalSd, color[n].funBtnsText);
-  setKeyColor(
-    themeDot,
-    color[n].equalBg,
-    color[n].equalSd,
-    color[n].funBtnsText
-  );
-}
-console.log(color[1].bodyBg);
-// theme switch feature
 const lis = calculator.querySelectorAll(".theme ul li");
 const themeDot = calculator.querySelector(".theme .dot");
+const links = document.querySelectorAll(".attribution a");
 const startX = themeDot.offsetLeft;
+
+function setFunBtnsTheme(ele1, ele2, ele3, n) {
+  let eles = [ele1, ele2, ele3];
+  eles.forEach(function (ele) {
+    ele.classList.add(`funBtns-theme-${n}`);
+    ele.classList.add(`font-theme-${n}`);
+  });
+}
+function setTheme(n) {
+  body.classList.add(`body-theme-${n}`);
+  calculator.classList.add(`font-theme-${n}`);
+  theme.classList.add(`theme-theme-${n}`);
+  themeBox.classList.add(`themeBox-theme-${n}`);
+  themeDot.classList.add(`themeDot-theme-${n}`);
+  display.classList.add(`display-theme-${n}`);
+  container.classList.add(`container-theme-${n}`);
+  Array.from(btns).forEach(function (btn, index) {
+    btn.classList.add(`btns-theme-${n}`);
+  });
+  equal.classList.add(`equal-theme-${n}`);
+  setFunBtnsTheme(del, reset, sign, n);
+  Array.from(links).forEach(function (link) {
+    link.classList.add(`link-theme-${n}`);
+  });
+}
+function removeFunBtnsTheme(ele1, ele2, ele3, n) {
+  let eles = [ele1, ele2, ele3];
+  eles.forEach(function (ele) {
+    ele.classList.remove(`funBtns-theme-${n}`);
+    ele.classList.remove(`font-theme-${n}`);
+  });
+}
+function removeTheme(n) {
+  body.classList.remove(`body-theme-${n}`);
+  calculator.classList.remove(`font-theme-${n}`);
+  theme.classList.remove(`theme-theme-${n}`);
+  themeBox.classList.remove(`themeBox-theme-${n}`);
+  themeDot.classList.remove(`themeDot-theme-${n}`);
+  display.classList.remove(`display-theme-${n}`);
+  container.classList.remove(`container-theme-${n}`);
+  Array.from(btns).forEach(function (btn, index) {
+    btn.classList.remove(`btns-theme-${n}`);
+  });
+  equal.classList.remove(`equal-theme-${n}`);
+  removeFunBtnsTheme(del, reset, sign, n);
+  Array.from(links).forEach(function (link) {
+    link.classList.remove(`link-theme-${n}`);
+  });
+}
+let current = 0;
 Array.from(lis).forEach(function (li, index) {
-  let n = index;
   li.addEventListener("click", function (e) {
     e.stopPropagation;
-    console.log(n);
-    // console.log(this.offsetLeft);
+
+    Array.from(lis).forEach(function (li) {
+      li.classList.remove("disable");
+    });
+
+    this.classList.toggle("disable");
+    console.log(index);
     themeDot.style.left = `${this.offsetLeft + startX}px`;
-    setTheme(n);
-    if (n == 2) {
-      equal.style.color = color[n].equalText;
-    } else {
-      equal.style.color = "white";
-    }
+    removeTheme(current + 1);
+    setTheme(index + 1);
+    current = index;
   });
 });
-
-window.addEventListener("load", function () {
-  setTheme(0);
-});
+add;
