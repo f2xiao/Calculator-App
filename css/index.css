@@ -5,16 +5,20 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 150%;
+  /* font-size: 150%; */
   font-family: "Spartan", sans-serif;
 }
+
 body {
   -webkit-touch-callout: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-size: 32px;
 }
 
 ul li {
@@ -33,17 +37,22 @@ button {
 .calculator {
   margin: 50px auto;
   width: 540px;
+  max-width: 85%;
   height: 710px;
+  max-height: 65%;
 }
 
 /* theme-toggle */
 .themeBox {
+  position: relative;
   height: 45px;
+  line-height: 45px;
   margin-bottom: 30px;
 }
 .theme {
-  position: relative;
-  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 70px;
   height: 25px;
   border-radius: 12.5px;
@@ -74,7 +83,7 @@ button {
 }
 .theme ul li:hover {
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.377);
   cursor: pointer;
 }
 .theme span {
@@ -109,12 +118,18 @@ button {
 .container > button {
   border-radius: 5px;
   font-family: "Spartan";
-  font-size: 32px;
 }
 
 /* functional keys */
 .container .Enter {
   grid-column: 3 / 5;
+}
+.attribution {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  font-size: 11px;
+  text-align: center;
 }
 
 /* Theme 1 */

@@ -1,0 +1,27 @@
+@media screen and (max-width: 750px) {
+  .calculator {
+    margin: 20px auto;
+  }
+  .themeBox {
+    height: 35px;
+    line-height: 35px;
+  }
+  .theme {
+    height: 15px;
+  }
+  .display {
+    height: 90px;
+  }
+  .container {
+    height: 420px;
+  }
+  .container > button {
+    font-size: 24px;
+  }
+  .container .Backspace,
+  .container .sign,
+  .container .reset,
+  .container .Enter {
+    font-size: 11px;
+  }
+}
