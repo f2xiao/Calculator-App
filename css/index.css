@@ -19,6 +19,7 @@ body {
   -ms-user-select: none;
   user-select: none;
   font-size: 32px;
+  height: 100vh;
 }
 
 ul li {
@@ -35,11 +36,11 @@ button {
   border: none;
 }
 .calculator {
-  margin: 50px auto;
+  padding: 20px 0;
+  margin: 0 auto;
   width: 540px;
   max-width: 85%;
   height: 710px;
-  max-height: 65%;
 }
 
 /* theme-toggle */
@@ -105,6 +106,7 @@ button {
 /* keypad */
 .container {
   display: grid;
+  position: relative;
   width: 100%;
   height: 480px;
   padding: 30px;
