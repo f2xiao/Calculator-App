@@ -28,7 +28,6 @@ ul li {
 a:link,
 a:visited {
   text-decoration: none;
-  /* color: white; */
 }
 button {
   appearance: none;
@@ -40,7 +39,6 @@ button {
   margin: 0 auto;
   width: 540px;
   max-width: 85%;
-  height: 710px;
 }
 
 /* theme-toggle */
@@ -128,14 +126,31 @@ button {
 }
 .attribution {
   width: 100%;
-  position: absolute;
-  bottom: 5px;
   font-size: 11px;
   text-align: center;
 }
 
 /* Theme 1 */
-
+[theme=dark]{
+  /* main background */
+  --main-backgroundColor:hsl(222, 26%, 31%);
+  /* theme toggle */
+  --slider-backgroundColor:hsl(222, 26%, 31%);
+  --toggle-backgroundColor:hsl(6, 63%, 50%);
+  /* display */
+  --display-backgroundColor:hsl(224, 36%, 15%);
+  --display-textColor:#fff;
+  /* keypad */
+  --keypad-backgroundColor:hsl(223, 31%, 20%);
+  /* num keys */
+  --numkeys-backgroundColor:hsl(30, 25%, 89%);
+  --numkeys-boxShadow:hsl(28, 16%, 65%);
+  --numkeys-textColor:hsl(221, 14%, 31%);
+  /* Enter key */
+  --enter-backgroundColor:hsl(30, 25%, 89%);
+  --enter-boxShadow:hsl(28, 16%, 65%);
+  --enter-textColor:hsl(221, 14%, 31%);
+}
 /* Backgrounds */
 .body-theme-1 {
   background: hsl(222, 26%, 31%);

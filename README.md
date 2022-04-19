@@ -71,7 +71,6 @@ initial theme preference checked using `prefers-color-scheme`:
 
 ### Continued development
 
-- keyboard support
 - refactor the code using ES6 class
 
 ### Useful resources

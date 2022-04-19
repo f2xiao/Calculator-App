@@ -25,3 +25,10 @@
     font-size: 11px;
   }
 }
+
+@media screen and (min-height: 750px){
+  .attribution{
+    position: fixed;
+    bottom:5px;
+  }
+}
