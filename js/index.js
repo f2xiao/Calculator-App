@@ -192,15 +192,25 @@ function setTheme(colorTheme) {
   document.body.setAttribute('theme', colorTheme);
 }
 
-let toggles = document.querySelectorAll('.theme ul li');
-toggles = Array.from(toggles);
-console.log(toggles);
-toggles.forEach(function (toggle) {
-  toggle.addEventListener('click', function (e) {
+let lis = document.querySelectorAll('.theme ul li');
+const toggle = calculator.querySelector(".theme .toggle");
+const startX = toggle.offsetLeft;
+lis = Array.from(lis);
+console.log(toggle);
+lis.forEach(function (li) {
+  li.addEventListener('click', function (e) {
+
+    e.stopPropagation;
+
+    lis.forEach(function (li) {
+      li.classList.remove("disable");
+    });
+
+    this.classList.toggle("disable");
+    toggle.style.left = `${this.offsetLeft + startX}px`;
+
     let colorTheme = e.target.getAttribute('color');
     setTheme(colorTheme);
   })
 })
-
-
 
