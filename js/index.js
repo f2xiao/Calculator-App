@@ -194,9 +194,7 @@ function setTheme(colorTheme) {
 
 let lis = document.querySelectorAll('.theme ul li');
 const toggle = calculator.querySelector(".theme .toggle");
-const startX = toggle.offsetLeft;
 lis = Array.from(lis);
-console.log(toggle);
 lis.forEach(function (li) {
   li.addEventListener('click', function (e) {
 
