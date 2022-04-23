@@ -181,83 +181,26 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-// theme switch feature set default to theme 1;
+// theme switch feature set default to theme 1: dark;
 
 window.addEventListener("load", function () {
-  setTheme(1);
+  setTheme(colorTheme);
 });
 
-const body = document.body;
-const themeBox = document.querySelector(".themeBox");
-const theme = document.querySelector(".theme");
-const container = document.querySelector(".container");
-const lis = calculator.querySelectorAll(".theme ul li");
-const toggle = calculator.querySelector(".theme .toggle");
-const links = document.querySelectorAll(".attribution a");
-const startX = toggle.offsetLeft;
+let colorTheme = "dark";
+function setTheme(colorTheme) {
+  document.body.setAttribute('theme', colorTheme);
+}
 
-function setFunBtnsTheme(ele1, ele2, ele3, n) {
-  let eles = [ele1, ele2, ele3];
-  eles.forEach(function (ele) {
-    ele.classList.add(`funBtns-theme-${n}`);
-    ele.classList.add(`font-theme-${n}`);
-  });
-}
-function setTheme(n) {
-  body.classList.add(`body-theme-${n}`);
-  calculator.classList.add(`font-theme-${n}`);
-  theme.classList.add(`theme-theme-${n}`);
-  themeBox.classList.add(`themeBox-theme-${n}`);
-  toggle.classList.add(`toggle-theme-${n}`);
-  display.classList.add(`display-theme-${n}`);
-  container.classList.add(`container-theme-${n}`);
-  Array.from(btns).forEach(function (btn, index) {
-    btn.classList.add(`btns-theme-${n}`);
-  });
-  Enter.classList.add(`Enter-theme-${n}`);
-  setFunBtnsTheme(Backspace, reset, sign, n);
-  Array.from(links).forEach(function (link) {
-    link.classList.add(`link-theme-${n}`);
-  });
-}
-function removeFunBtnsTheme(ele1, ele2, ele3, n) {
-  let eles = [ele1, ele2, ele3];
-  eles.forEach(function (ele) {
-    ele.classList.remove(`funBtns-theme-${n}`);
-    ele.classList.remove(`font-theme-${n}`);
-  });
-}
-function removeTheme(n) {
-  body.classList.remove(`body-theme-${n}`);
-  calculator.classList.remove(`font-theme-${n}`);
-  theme.classList.remove(`theme-theme-${n}`);
-  themeBox.classList.remove(`themeBox-theme-${n}`);
-  toggle.classList.remove(`toggle-theme-${n}`);
-  display.classList.remove(`display-theme-${n}`);
-  container.classList.remove(`container-theme-${n}`);
-  Array.from(btns).forEach(function (btn, index) {
-    btn.classList.remove(`btns-theme-${n}`);
-  });
-  Enter.classList.remove(`Enter-theme-${n}`);
-  removeFunBtnsTheme(Backspace, reset, sign, n);
-  Array.from(links).forEach(function (link) {
-    link.classList.remove(`link-theme-${n}`);
-  });
-}
-let current = 0;
-Array.from(lis).forEach(function (li, index) {
-  li.addEventListener("click", function (e) {
-    e.stopPropagation;
+let toggles = document.querySelectorAll('.theme ul li');
+toggles = Array.from(toggles);
+console.log(toggles);
+toggles.forEach(function (toggle) {
+  toggle.addEventListener('click', function (e) {
+    let colorTheme = e.target.getAttribute('color');
+    setTheme(colorTheme);
+  })
+})
 
-    Array.from(lis).forEach(function (li) {
-      li.classList.remove("disable");
-    });
 
-    this.classList.toggle("disable");
-    console.log(index);
-    toggle.style.left = `${this.offsetLeft + startX}px`;
-    removeTheme(current + 1);
-    setTheme(index + 1);
-    current = index;
-  });
-});
+

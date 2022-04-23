@@ -1,0 +1,94 @@
+/* Theme 1 */
+[theme=dark]{
+    /* main background */
+    --main-backgroundColor:hsl(222, 26%, 31%);
+    /* theme toggle */
+    --slider-backgroundColor:hsl(223, 31%, 20%);
+    --toggle-backgroundColor:hsl(6, 63%, 50%);
+    /* display */
+    --display-backgroundColor:hsl(224, 36%, 15%);
+    --display-textColor:#fff;
+    /* keypad */
+    --keypad-backgroundColor:hsl(223, 31%, 20%);
+    --keypad-textColor:#fff;
+    /* num keys */
+    --numkeys-backgroundColor:hsl(30, 25%, 89%);
+    --numkeys-boxShadow:hsl(28, 16%, 65%);
+    --numkeys-textColor:hsl(221, 14%, 31%);
+    /* Enter key */
+    --enter-backgroundColor:hsl(6, 63%, 50%);
+    --enter-boxShadow:0 2px hsl(6, 70%, 34%);
+    --enter-textColor:#fff;
+  
+    /* other function keys*/
+    --funkeys-backgroundColor: hsl(225, 21%, 49%);
+    --funkeys-boxShadow: 0 2px hsl(224, 28%, 35%);
+  
+    /* font and link */
+    --main-textColor: #fff;
+     /* footer link */
+     --footer-linkTextColor: #fff;
+  }
+  /* Theme 2 */
+  [theme=light]{
+    /* main background */
+    --main-backgroundColor:hsl(0, 0%, 90%);
+    /* theme toggle */
+    --slider-backgroundColor:hsl(0, 5%, 81%);
+    --toggle-backgroundColor:hsl(6, 63%, 50%);
+    /* display */
+    --display-backgroundColor:hsl(0, 0%, 93%);
+    --display-textColor:hsl(60, 10%, 19%);
+    /* keypad */
+    --keypad-backgroundColor:hsl(0, 5%, 81%);
+    --keypad-textColor:#fff;
+    /* num keys */
+    --numkeys-backgroundColor:hsl(45, 7%, 89%);
+    --numkeys-boxShadow:0 2px hsl(35, 11%, 61%);
+    --numkeys-textColor:hsl(60, 10%, 19%);
+    /* Enter key */
+    --enter-backgroundColor:hsl(25, 98%, 40%);
+    --enter-boxShadow:0 2px hsl(25, 99%, 27%);
+  
+    /* other function keys*/
+    --funkeys-backgroundColor: hsl(185, 42%, 37%);
+    --funkeys-boxShadow:0 2px hsl(185, 58%, 25%);
+    
+    /* font */
+    --main-textColor: hsl(60, 10%, 19%);
+    /* footer link */
+    --footer-linkTextColor: hsl(185, 42%, 37%);
+  }
+  /* Theme 3 */
+  [theme=punk]{
+    /* main background */
+    --main-backgroundColor:hsl(268, 75%, 9%);
+    /* theme toggle */
+    --slider-backgroundColor:hsl(268, 71%, 12%);
+    --toggle-backgroundColor:hsl(176, 100%, 44%);
+    /* display */
+    --display-backgroundColor:hsl(268, 71%, 12%);
+    --display-textColor:hsl(52, 100%, 62%);
+    /* keypad */
+    --keypad-backgroundColor:hsl(268, 71%, 12%);
+    --keypad-textColor:#fff;
+    /* num keys */
+    --numkeys-backgroundColor:hsl(268, 47%, 21%);
+    --numkeys-boxShadow:0 2px hsl(290, 70%, 36%);
+    --numkeys-textColor:hsl(52, 100%, 62%);
+    /* Enter key */
+    --enter-backgroundColor:hsl(176, 100%, 44%);
+    --enter-boxShadow:0 2px hsl(177, 92%, 70%);
+    --enter-textColor: hsl(198, 20%, 13%);
+  
+    /* other function keys*/
+    --funkeys-backgroundColor: hsl(281, 89%, 26%);
+    --funkeys-boxShadow:0 2px hsl(285, 91%, 52%);
+    
+    /* font */
+    --main-textColor: #fff;
+    /* footer link */
+    --footer-linkTextColor: hsl(52, 100%, 62%);
+    --footer-textColor: hsl(281, 89%, 26%);
+  }
+  

@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 html {
-  /* font-size: 150%; */
   font-family: "Spartan", sans-serif;
 }
 
@@ -20,6 +19,7 @@ body {
   user-select: none;
   font-size: 32px;
   min-height: 100vh;
+  background-color: var(--main-backgroundColor);
 }
 
 ul li {
@@ -39,6 +39,7 @@ button {
   margin: 0 auto;
   width: 540px;
   max-width: 85%;
+  color: var(--main-textColor);
 }
 
 /* theme-toggle */
@@ -54,6 +55,7 @@ button {
   right: 0;
   width: 70px;
   height: 25px;
+  background-color: var(--slider-backgroundColor);
   border-radius: 12.5px;
 }
 .theme .toggle {
@@ -62,6 +64,7 @@ button {
   left: 6px;
   transform: translateY(-50%);
   display: block;
+  background-color: var(--toggle-backgroundColor);
   height: 15px;
   width: 15px;
   border-radius: 7.5px;
@@ -99,6 +102,8 @@ button {
   margin-bottom: 25px;
   text-align: end;
   border-radius: 6px;
+  background-color: var(--display-backgroundColor);
+  color: var(--display-textColor);
 }
 
 /* keypad */
@@ -112,209 +117,49 @@ button {
   grid-template-rows: repeat(5, 1fr);
   gap: 20px;
   border-radius: 6px;
+  background-color: var(--keypad-backgroundColor);
+  color: var(--keypad-textColor);
 }
 
 /* keys */
-.container > button {
-  border-radius: 5px;
+button{
   font-family: "Spartan";
+  border-radius: 5px;
+}
+button, a{
+  color: var(--keypad-textColor);
+}
+.container .operand,
+.container .operator {
+  background-color: var(--numkeys-backgroundColor);
+  box-shadow: var(--numkeys-boxShadow);
+  color: var(--numkeys-textColor);
 }
 
 /* functional keys */
 .container .Enter {
   grid-column: 3 / 5;
+  background-color: var(--enter-backgroundColor);
+  box-shadow: var(--enter-boxShadow);
+  color: var(--enter-textColor);
 }
+.Backspace, .reset, .sign{
+  background-color: var(--funkeys-backgroundColor);
+  box-shadow: var(--funkeys-boxShadow);
+}
+
+/* footer */
 .attribution {
   width: 100%;
   font-size: 11px;
   text-align: center;
+  color: var(--footer-textColor);
 }
-
-/* Theme 1 */
-[theme=dark]{
-  /* main background */
-  --main-backgroundColor:hsl(222, 26%, 31%);
-  /* theme toggle */
-  --slider-backgroundColor:hsl(222, 26%, 31%);
-  --toggle-backgroundColor:hsl(6, 63%, 50%);
-  /* display */
-  --display-backgroundColor:hsl(224, 36%, 15%);
-  --display-textColor:#fff;
-  /* keypad */
-  --keypad-backgroundColor:hsl(223, 31%, 20%);
-  /* num keys */
-  --numkeys-backgroundColor:hsl(30, 25%, 89%);
-  --numkeys-boxShadow:hsl(28, 16%, 65%);
-  --numkeys-textColor:hsl(221, 14%, 31%);
-  /* Enter key */
-  --enter-backgroundColor:hsl(30, 25%, 89%);
-  --enter-boxShadow:hsl(28, 16%, 65%);
-  --enter-textColor:hsl(221, 14%, 31%);
-}
-/* Backgrounds */
-.body-theme-1 {
-  background: hsl(222, 26%, 31%);
-}
-
-/* toggle slider */
-.theme-theme-1 {
-  background: hsl(223, 31%, 20%);
-}
-
-/* toggle */
-.toggle-theme-1 {
-  background: hsl(6, 63%, 50%);
-}
-
-/* display */
-.display-theme-1 {
-  background: hsl(224, 36%, 15%);
-  color: #fff;
-}
-
-/* keypad */
-.container-theme-1 {
-  background: hsl(223, 31%, 20%);
-}
-/* Keys */
-
-/* num keys */
-.btns-theme-1 {
-  background: hsl(30, 25%, 89%);
-  box-shadow: 0 2px hsl(28, 16%, 65%);
-  color: hsl(221, 14%, 31%);
-}
-/* Enter key */
-.Enter-theme-1 {
-  background: hsl(6, 63%, 50%);
-  box-shadow: 0 2px hsl(6, 70%, 34%);
-  color: #fff;
-}
-/* other function keys*/
-.funBtns-theme-1 {
-  background: hsl(225, 21%, 49%);
-  box-shadow: 0 2px hsl(224, 28%, 35%);
-}
-
-.font-theme-1,
-.link-theme-1 {
-  color: #fff;
-}
-/* Theme 2 */
-
-/* Backgrounds */
-.body-theme-2 {
-  background: hsl(0, 0%, 90%);
-}
-
-/* toggle slider */
-.theme-theme-2 {
-  background: hsl(0, 5%, 81%);
-}
-.themeBox-theme-2 {
-  color: hsl(60, 10%, 19%);
-}
-
-/* toggle */
-.toggle-theme-2 {
-  background: hsl(6, 63%, 50%);
-}
-
-/* display */
-.display-theme-2 {
-  background: hsl(0, 0%, 93%);
-  color: hsl(60, 10%, 19%);
-}
-
-/* keypad */
-.container-theme-2 {
-  background: hsl(0, 5%, 81%);
-}
-/* Keys */
-
-/* num keys */
-.btns-theme-2 {
-  background: hsl(45, 7%, 89%);
-  box-shadow: 0 2px hsl(35, 11%, 61%);
-  color: hsl(60, 10%, 19%);
-}
-/* Enter key */
-.Enter-theme-2 {
-  background: hsl(25, 98%, 40%);
-  box-shadow: 0 2px hsl(25, 99%, 27%);
-  color: #fff;
-}
-/* other function keys*/
-.funBtns-theme-2 {
-  background: hsl(185, 42%, 37%);
-  box-shadow: 0 2px hsl(185, 58%, 25%);
-}
-.link-theme-2 {
-  color: hsl(60, 10%, 19%);
-}
-.link-theme-2 {
-  color: hsl(185, 42%, 37%);
-}
-.font-theme-2 {
-  color: #fff;
-}
-
-/* Theme 3 */
-
-/* Backgrounds */
-.body-theme-3 {
-  background: hsl(268, 75%, 9%);
-  color: hsl(281, 89%, 26%);
-}
-
-/* toggle slider */
-.theme-theme-3 {
-  background: hsl(268, 71%, 12%);
-}
-.themeBox-theme-3,
-.link-theme-3 {
-  color: hsl(52, 100%, 62%);
-}
-
-/* toggle */
-.toggle-theme-3 {
-  background: hsl(176, 100%, 44%);
-}
-
-/* display */
-.display-theme-3 {
-  background: hsl(268, 71%, 12%);
-  color: hsl(52, 100%, 62%);
-}
-
-/* keypad */
-.container-theme-3 {
-  background: hsl(268, 71%, 12%);
-}
-/* Keys */
-
-/* num keys */
-.btns-theme-3 {
-  background: hsl(268, 47%, 21%);
-  box-shadow: 0 2px hsl(290, 70%, 36%);
-  color: hsl(52, 100%, 62%);
-}
-/* Enter key */
-.Enter-theme-3 {
-  background: hsl(176, 100%, 44%);
-  box-shadow: 0 2px hsl(177, 92%, 70%);
-  color: hsl(198, 20%, 13%);
-}
-/* other function keys*/
-.funBtns-theme-3 {
-  background: hsl(281, 89%, 26%);
-  box-shadow: 0 2px hsl(285, 91%, 52%);
-}
-
-.font-theme-3 {
-  color: #fff;
+.attribution a {
+  color: var(--footer-linkTextColor);
 }
 
 .disable {
   pointer-events: none;
 }
+
